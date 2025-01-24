@@ -1,6 +1,6 @@
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 import Home from './pages/Home.jsx';
-import Regressiva from './pages/regressiva.jsx';
+import Regressiva from './pages/Regressiva.jsx';
 import Conversa from './pages/Conversa.jsx';
 import Namoro from './pages/Namoro.jsx'; 
 
