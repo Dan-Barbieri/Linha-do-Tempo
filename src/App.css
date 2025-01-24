@@ -1,0 +1,19 @@
+@import "tailwindcss";
+
+.bg-surpresa {
+  background-image: url('/src/assets/surpresa.jpg');
+  background-size: cover; 
+  filter: brightness(0.8);
+}
+
+.bg-beats {
+  background-image: url('/src/assets/beats.jpg');
+  background-size: cover; 
+  filter: brightness(0.8);
+}
+
+.bg-namoro {
+  background-image: url('/src/assets/namoro.jpg');
+  background-size: cover; 
+  filter: brightness(0.8);
+}
