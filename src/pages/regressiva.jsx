@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 
-
-const Regressiva = () => {
+ const Regressiva = () => {
   const targetDate = new Date('2025-11-15');
   const [timeLeft, setTimeLeft] = useState({ years: 0, months: 0, weeks: 0, days: 0, hours: 0 });
 
