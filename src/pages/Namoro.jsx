@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 
 const Namoro = () => {
   // Defina a data de destino para 07/04/2024
-  const targetDate = new Date('2024-04-07');
+  const targetDate = new Date('2024-06-15');
   const [timeLeft, setTimeLeft] = useState({ years: 0, months: 0, weeks: 0, days: 0, hours: 0 });
 
   useEffect(() => {
