@@ -5,9 +5,15 @@ import Conversa from './pages/Conversa.jsx';
 import Namoro from './pages/Namoro.jsx';
 import TextinhosPage from './pages/TextinhosPage.jsx';
 import { useEffect } from 'react';
+import { ReactNode } from 'react';  // Importando ReactNode para tipar children
 
 // Componente para aplicar destaque à rota ativa
-const NavLink = ({ to, children }) => {
+interface NavLinkProps {
+  to: string;
+  children: ReactNode;
+}
+
+const NavLink: React.FC<NavLinkProps> = ({ to, children }) => {
   const location = useLocation();
   const isActive = location.pathname === to;
 
