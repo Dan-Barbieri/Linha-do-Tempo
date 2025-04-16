@@ -1,42 +1,60 @@
-import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, Link, useLocation } from 'react-router-dom';
 import Home from './pages/Home.jsx';
 import Regressiva from './pages/Regressiva.jsx';
 import Conversa from './pages/Conversa.jsx';
-import Namoro from './pages/Namoro.jsx'; 
+import Namoro from './pages/Namoro.jsx';
+import TextinhosPage from './pages/TextinhosPage.jsx';
+import { useEffect } from 'react';
+
+// Componente para aplicar destaque à rota ativa
+const NavLink = ({ to, children }) => {
+  const location = useLocation();
+  const isActive = location.pathname === to;
+
+  return (
+    <Link
+      to={to}
+      className={`${
+        isActive ? 'text-luna-blue font-semibold' : 'text-blue-500'
+      } hover:underline transition`}
+    >
+      {children}
+    </Link>
+  );
+};
+
+// Scroll para o topo ao mudar de rota (melhora UX)
+const ScrollToTop = () => {
+  const { pathname } = useLocation();
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [pathname]);
+  return null;
+};
 
 function App() {
   return (
     <Router>
-      <nav className="bg-gray-100 p-4">
-        <ul className="flex space-x-6 justify-start">
-          <li>
-            <Link to="/" className="text-blue-500 hover:underline">
-              Home
-            </Link>
-          </li>
-          <li>
-            <Link to="/inicio" className="text-blue-500 hover:underline">
-              Inicio
-            </Link>
-          </li>
-          <li>
-            <Link to="/namoro" className="text-blue-500 hover:underline">
-              Namoro
-            </Link>
-          </li>
-          <li>
-            <Link to="/regressiva" className="text-blue-500 hover:underline">
-              Futuro?!?
-            </Link>
-          </li>
+      <ScrollToTop />
+      <nav className="bg-white/80 backdrop-blur-md shadow p-4 sticky top-0 z-50">
+        <ul className="flex space-x-6 text-sm md:text-base font-medium">
+          <li><NavLink to="/">Home</NavLink></li>
+          <li><NavLink to="/inicio">Início</NavLink></li>
+          <li><NavLink to="/namoro">Namoro</NavLink></li>
+          <li><NavLink to="/regressiva">Futuro?!?</NavLink></li>
+          <li><NavLink to="/textinhos">Textinhos</NavLink></li>
         </ul>
       </nav>
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/regressiva" element={<Regressiva />} />
-        <Route path="/inicio" element={<Conversa />} />
-        <Route path="/namoro" element={<Namoro />} />
-      </Routes>
+
+      <main className="min-h-screen bg-gray-50">
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/regressiva" element={<Regressiva />} />
+          <Route path="/inicio" element={<Conversa />} />
+          <Route path="/namoro" element={<Namoro />} />
+          <Route path="/textinhos" element={<TextinhosPage />} />
+        </Routes>
+      </main>
     </Router>
   );
 }
