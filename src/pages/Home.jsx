@@ -4,8 +4,9 @@ import selo from "../../public/selo.png"; // ajuste se necessário
 export default function Home() {
   return (
     <div className="flex flex-col items-center justify-center min-h-screen bg-[#1a1a1a] text-[#f5deb3] font-serif">
-      <h1 className="text-3xl font-bold">Sua carta chegou!</h1>
-      <p className="mt-2">Clique na carta abaixo para abrir</p>
+       <h1 className="text-4xl font-bold mb-2">Olá, meu bruxinho!</h1>
+      <p className="mt-2 text-lg italic">Prepare-se para embarcar em nossa própria história mágica</p>
+      <p className="mt-4">Clique na carta abaixo para começar sua jornada</p>
 
       <Link to="/inicio">
         <div className="relative mt-12 w-72 h-48 group perspective">
