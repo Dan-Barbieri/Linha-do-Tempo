@@ -17,3 +17,7 @@
   background-size: cover; 
   filter: brightness(0.8);
 }
+
+.perspective {
+  perspective: 1000px;
+}
