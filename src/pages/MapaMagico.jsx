@@ -55,23 +55,13 @@ const MapaMagico = () => {
     const [mensagem, setMensagem] = useState(null);
 
     return (
-        <div className="relative min-h-screen bg-black">
-            {/* Imagem do Mapa */}
-            <img
-                src="/src/assets/mapa.jpg"
-                alt="Mapa Mágico"
-                className="w-full h-auto object-contain"
-            />
-
+        <div className="relative min-h-screen bg-black bg-mapa bg-cover bg-center">
             {/* Ícones mágicos com brilho */}
             {lugares.map((lugar, index) => (
                 <div key={index} className="absolute" style={{ top: lugar.top, left: lugar.left, transform: 'translate(-50%, -50%)' }}>
-                    {/* Nome do Lugar visível o tempo todo */}
                     <div className="absolute text-black text-center h-full" style={{ top: '-2.5rem' }}>
                         <p className="text-ls font-harry">{lugar.nome}</p>
                     </div>
-
-                    {/* Botão */}
                     <button
                         onClick={() => setMensagem(lugar.mensagem)}
                         className="w-8 h-8 bg-yellow-300 rounded-full shadow-lg hover:scale-110 ring-2 ring-yellow-400 animate-pulse transition"
@@ -83,7 +73,7 @@ const MapaMagico = () => {
             {/* Mensagem Mágica */}
             {mensagem && (
                 <div
-                    className="absolute inset-0  bg-opacity-70 backdrop-blur-sm flex items-center justify-center text-white text-xl p-6 z-50"
+                    className="absolute inset-0 bg-opacity-70 backdrop-blur-sm flex items-center justify-center text-white text-xl p-6 z-50"
                     onClick={() => setMensagem(null)}
                 >
                     <div className="bg-gray-800 p-6 rounded-xl max-w-md text-center border border-amber-400 shadow-lg">

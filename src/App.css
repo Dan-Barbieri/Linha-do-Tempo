@@ -16,6 +16,12 @@
   filter: brightness(0.8);
 }
 
+.bg-mapa {
+  background-image: url('/src/assets/mapa.jpg');
+  background-size: cover;
+  background-position: center;
+}
+
 .bg-namoro {
   background-image: url('/src/assets/namoro.jpg');
   background-size: cover; 
