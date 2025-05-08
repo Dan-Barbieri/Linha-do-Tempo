@@ -5,6 +5,7 @@ import Conversa from './pages/Conversa.jsx';
 import Namoro from './pages/Namoro.jsx';
 import TextinhosPage from './pages/TextinhosPage.jsx';
 import NamoroPuzzle from './pages/QuebraCabeca.jsx';
+import MapaMagico from './pages/MapaMagico.jsx';
 import { useEffect } from 'react';
 import { ReactNode } from 'react';  // Importando ReactNode para tipar children
 
@@ -51,6 +52,7 @@ function App() {
           <li><NavLink to="/regressiva">Futuro?!?</NavLink></li>
           <li><NavLink to="/textinhos">Textinhos</NavLink></li>
           <li><NavLink to="/surpresa">Surpresa!!</NavLink></li>
+          <li><NavLink to="/mapa">Mapa Mágico</NavLink></li>
         </ul>
       </nav>
 
@@ -62,6 +64,7 @@ function App() {
           <Route path="/namoro" element={<Namoro />} />
           <Route path="/textinhos" element={<TextinhosPage />} />
           <Route path="/surpresa" element={<NamoroPuzzle />} />
+          <Route path="/mapa" element={<MapaMagico />} />
         </Routes>
       </main>
     </Router>
